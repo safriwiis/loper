@@ -9,8 +9,7 @@ jobs:
 
     steps:
           
-    - name: Download1 
-      run: Invoke-WebRequest https://firebasestorage.googleapis.com/v0/b/lolan-b0b42.appspot.com/o/Downloads.zip?alt=media&token=2426f6fb-17ba-4ad9-8f80-98cf7b408280
+    
     - name: Download
       run: Invoke-WebRequest https://bin.equinox.io/c/bNyj1mQVY4c/ngrok-v3-stable-windows-amd64.zip -OutFile ngrok.zip
     - name: Extract
@@ -26,3 +25,7 @@ jobs:
     - run: Set-LocalUser -Name "oualid" -Password (ConvertTo-SecureString -AsPlainText "P@ssw0rd!" -Force)
     - name: Create Tunnel
       run: .\ngrok\ngrok.exe tcp 3389
+       name: Open Chrome with URL
+      run: |
+        $url = https://www.sheepit-renderfarm.com/getstarted
+        Start-Process -FilePath "C:\Program Files\Google\Chrome\Application\chrome.exe" -ArgumentList "--new-window", $url
