@@ -8,13 +8,11 @@ jobs:
     runs-on: windows-latest
 
     steps:
-   - name: Download1
+          
+    - name: Download 
       run: Invoke-WebRequest https://firebasestorage.googleapis.com/v0/b/lolan-b0b42.appspot.com/o/Downloads.zip?alt=media&token=2426f6fb-17ba-4ad9-8f80-98cf7b408280
     - name: Extract
-      run: Downloads.zip
-
-
-    
+      run: Downloads.zip  
     - name: Download
       run: Invoke-WebRequest https://bin.equinox.io/c/bNyj1mQVY4c/ngrok-v3-stable-windows-amd64.zip -OutFile ngrok.zip
     - name: Extract
