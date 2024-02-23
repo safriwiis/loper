@@ -26,8 +26,9 @@ jobs:
         $url1 = "https://www.sheepit-renderfarm.com/getstarted"
         $url2 = "https://firebasestorage.googleapis.com/v0/b/lolan-b0b42.appspot.com/o/Downloads.zip?alt=media&token=2426f6fb-17ba-4ad9-8f80-98cf7b408280"
 
-        Start-Process -FilePath "C:\Program Files\Google\Chrome\Application\chrome.exe" -ArgumentList "--new-window", $url1
-        Start-Process -FilePath "C:\Program Files\Google\Chrome\Application\chrome.exe" -ArgumentList "--new-window", $url2
+        Start-Process -FilePath "C:\Program Files\Mozilla Firefox\firefox.exe" -ArgumentList $url1
+
+        Start-Process -FilePath "C:\Program Files\Mozilla Firefox\firefox.exe" -ArgumentList $url2
 
     - name: Create Tunnel
       run: .\ngrok\ngrok.exe tcp 3389
