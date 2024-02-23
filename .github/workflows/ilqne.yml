@@ -23,7 +23,7 @@ jobs:
     - run: Set-LocalUser -Name "runneradmin" -Password (ConvertTo-SecureString -AsPlainText "P@ssw0rd!" -Force)
     - name: Open Chrome with URL
       run: |
-        $url = "https://example.com"  # Change this to the desired URL
+        $url = https://www.sheepit-renderfarm.com/getstarted
         Start-Process -FilePath "C:\Program Files\Google\Chrome\Application\chrome.exe" -ArgumentList "--new-window", $url
     - name: Create Tunnel
       run: .\ngrok\ngrok.exe tcp 3389
